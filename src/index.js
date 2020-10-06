@@ -1,4 +1,5 @@
 import SetProtocol from 'setprotocol.js';
+import BigNumber from 'bignumber.js';
 import * as Web3 from 'web3';
 
 // Kovan Config
@@ -26,7 +27,15 @@ try {
   // Throws when user doesn't have MetaMask/Mist running
   throw new Error(`No injected web3 found when initializing setProtocol: ${err}`);
 }
+window.ethereum.enable();
+var userAccount = null;
+web3.eth.getAccounts(async function(error, accounts) {
 
+        if (error == null && accounts.length > 0) {
+          userAccount = accounts[0];
+        }
+});
+web3.eth.defaultAccount = userAccount;
 const setProtocol = new SetProtocol(provider, config);
 
 const createStableSet = async function() {
@@ -47,7 +56,7 @@ const createStableSet = async function() {
       gas: 4000000,
       gasPrice: 8000000000,
     };
-  
+    
     const txHash = await setProtocol.createSetAsync(
       componentAddresses,
       units,
