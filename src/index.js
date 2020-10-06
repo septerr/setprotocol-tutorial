@@ -17,7 +17,7 @@ const config = {
   wrappedEtherAddress: '0x8a18c7034aCEfD1748199a58683Ee5F22e2d4e45',
 };
 
-const injectedWeb3 = window.web3 || undefined;
+const injectedWeb3 = window.Web3 || undefined;
 let provider;
 try {
   // Use MetaMask/Mist provider

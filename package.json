@@ -2,15 +2,15 @@
   "dependencies": {
     "@0xproject/typescript-typings": "^3.0.2",
     "bignumber.js": "^5.0.0",
-    "setprotocol.js": "^1.2.9-rc1"
+    "setprotocol.js": "^1.2.9-rc1",
+    "web3": "^1.0.0-beta.36"
   },
   "name": "setprotocol",
   "version": "1.0.0",
   "description": "set protocol tutorial",
-  "main": "index.js",
   "author": "swapna",
   "license": "MIT",
-  "private": null,
+  "private": true,
   "devDependencies": {
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
